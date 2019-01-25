@@ -33,7 +33,6 @@ def intersectionoftwolines_y(m1, b1, m2, b2):
     # Calculate y for the point where two equations:
     # y = (m1 * x) + b1 and y = (m2 * x) + b2 intersect.
 
-
     y = m1*((b2-b1)/(m1-m2))+b1
     return y
 
@@ -55,9 +54,17 @@ def areaofatriangle(m1, b1, m2, b2, m3, b3):
     #Using the three functions above, now calculate the area of a
     #triangle when the three sides are described by three linear equations
     #y = (m1 * x) + b1;  y = (m2 * x) + b2; and y = (m3 * x) + b3
+    d = intersectionoftwolines_x(m1, b1, m2, b2)
+    e = intersectionoftwolines_y(m1, b1, m2, b2)
+    f = intersectionoftwolines_x(m1, b1, m3, b3)
+    g = intersectionoftwolines_y(m1, b1, m3, b3)
+    h = intersectionoftwolines_x(m2, b2, m3, b3)
+    i = intersectionoftwolines_y(m2, b2, m3, b3)
 
-
-    area = 0 #replace this with your calculation for area
+    j = distancebetweenpoints(d, e, f, g)
+    k = distancebetweenpoints(d, e, h, i)
+    l = distancebetweenpoints(f, g, h, i)
+    area = heronsformula(j, k, l) #replace this with your calculation for area
     return area
 
 
