@@ -26,9 +26,7 @@ import math #This line allows you to use math functions. Importantly, math.sqrt(
 def intersectionoftwolines_x(m1, b1, m2, b2):
     # Calculate x for the point where two equations:
     # y = (m1 * x) + b1 and y = (m2 * x) + b2 intersect.
-
-
-    x = 0 #replace this with your calculation for x
+    x = (b2-b1)/(m1-m2) #replace this with your calculation for x
     return x
 
 def intersectionoftwolines_y(m1, b1, m2, b2):
@@ -36,25 +34,21 @@ def intersectionoftwolines_y(m1, b1, m2, b2):
     # y = (m1 * x) + b1 and y = (m2 * x) + b2 intersect.
 
 
-    y = 0 #replace this with your calculation for y
+    y = m1*((b2-b1)/(m1-m2))+b1
     return y
 
 
 def distancebetweenpoints(x1, y1, x2, y2):
     # Calculate the linear distance between two points
     # (x1, y1) and (x2, y2).
-
-
     distance = math.sqrt(((x2-x1)**2)+((y2-y1)**2))
     return distance
 
 def heronsformula(a, b, c):
     # Calculate the area of a triangle with three known side lengths.
     # You may want to look up Heron's formula online.
-
-
-
-    area = 0 #replace this with your calculation for area
+    s = (a+b+c)/2
+    area = math.sqrt((s*(s-a)*(s-b)*(s-c))) #replace this with your calculation for area
     return area
 
 def areaofatriangle(m1, b1, m2, b2, m3, b3):
