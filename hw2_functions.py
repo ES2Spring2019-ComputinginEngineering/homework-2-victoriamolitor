@@ -4,8 +4,8 @@
 # FILL THESE COMMENTS IN
 #*****************************************
 # YOUR NAME: Victoria Molitor
-# NUMBER OF HOURS TO COMPLETE:  (please track how long this homework takes you to complete).
-# YOUR COLLABORATION STATEMENT(s) (refer to syllabus):
+# NUMBER OF HOURS TO COMPLETE: 0.5 (please track how long this homework takes you to complete).
+# YOUR COLLABORATION STATEMENT(s) (refer to syllabus): I worked alone on this assignment.
 #
 #*****************************************
 
@@ -20,40 +20,26 @@
 
 #Please complete the four required functions below:
 
-import math #This line allows you to use math functions. Importantly, math.sqrt(#) which will produce the square root of the number inside the parentheses.
-
+import math
 
 def intersectionoftwolines_x(m1, b1, m2, b2):
-    # Calculate x for the point where two equations:
-    # y = (m1 * x) + b1 and y = (m2 * x) + b2 intersect.
-    x = (b2-b1)/(m1-m2) #replace this with your calculation for x
+    x = (b2-b1)/(m1-m2)
     return x
 
 def intersectionoftwolines_y(m1, b1, m2, b2):
-    # Calculate y for the point where two equations:
-    # y = (m1 * x) + b1 and y = (m2 * x) + b2 intersect.
-
     y = m1*((b2-b1)/(m1-m2))+b1
     return y
 
-
 def distancebetweenpoints(x1, y1, x2, y2):
-    # Calculate the linear distance between two points
-    # (x1, y1) and (x2, y2).
     distance = math.sqrt(((x2-x1)**2)+((y2-y1)**2))
     return distance
 
 def heronsformula(a, b, c):
-    # Calculate the area of a triangle with three known side lengths.
-    # You may want to look up Heron's formula online.
     s = (a+b+c)/2
-    area = math.sqrt((s*(s-a)*(s-b)*(s-c))) #replace this with your calculation for area
+    area = math.sqrt((s*(s-a)*(s-b)*(s-c)))
     return area
 
 def areaofatriangle(m1, b1, m2, b2, m3, b3):
-    #Using the three functions above, now calculate the area of a
-    #triangle when the three sides are described by three linear equations
-    #y = (m1 * x) + b1;  y = (m2 * x) + b2; and y = (m3 * x) + b3
     d = intersectionoftwolines_x(m1, b1, m2, b2)
     e = intersectionoftwolines_y(m1, b1, m2, b2)
     f = intersectionoftwolines_x(m1, b1, m3, b3)
@@ -64,9 +50,8 @@ def areaofatriangle(m1, b1, m2, b2, m3, b3):
     j = distancebetweenpoints(d, e, f, g)
     k = distancebetweenpoints(d, e, h, i)
     l = distancebetweenpoints(f, g, h, i)
-    area = heronsformula(j, k, l) #replace this with your calculation for area
+    area = heronsformula(j, k, l)
     return area
-
 
 #TEST CASES
 #These print statements will be true when your functions are working.
